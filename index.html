@@ -213,10 +213,11 @@
         </section>
 
         <!-- Nueva Sección: Algoritmos de Búsqueda y CRUD -->
+        <!-- Sección de Algoritmos de Búsqueda y CRUD -->
         <section id="algoritmos">
-            <h2>Algoritmos de Búsqueda en Inteligencia Artificial</h2>
+            <h2>Algoritmos de Búsqueda</h2>
             <p>
-                Los algoritmos de búsqueda son estrategias fundamentales en la IA utilizadas para explorar espacios de estados, encontrar rutas óptimas y resolver problemas complejos mediante la evaluación de nodos de solución. Se dividen principalmente en búsquedas no informadas (a ciegas) y búsquedas informadas (heurísticas).
+                Listado completo de algoritmos de búsqueda utilizados en informática, inteligencia artificial y estructuras de datos.
             </p>
 
             <h3>Gestión de Algoritmos (CRUD)</h3>
@@ -227,19 +228,11 @@
                     <input type="text" id="nombre" required style="width: 100%; padding: 8px;">
                 </div>
                 <div style="margin-bottom: 10px;">
-                    <label for="tipo">Tipo de Búsqueda:</label><br>
-                    <select id="tipo" required style="width: 100%; padding: 8px;">
-                        <option value="No Informada">No Informada</option>
-                        <option value="Informada">Informada</option>
-                        <option value="Adversaria">Adversaria</option>
-                    </select>
+                    <label for="tipo">Tipo:</label><br>
+                    <input type="text" id="tipo" required placeholder="Ej. Secuencial, Ciega, Heurística..." style="width: 100%; padding: 8px;">
                 </div>
                 <div style="margin-bottom: 10px;">
-                    <label for="complejidad">Complejidad Temporal / Espacial:</label><br>
-                    <input type="text" id="complejidad" required placeholder="Ej. O(V + E) / O(b^d)" style="width: 100%; padding: 8px;">
-                </div>
-                <div style="margin-bottom: 10px;">
-                    <label for="descripcion">Descripción / Aplicación:</label><br>
+                    <label for="descripcion">Descripción:</label><br>
                     <textarea id="descripcion" rows="3" required style="width: 100%; padding: 8px;"></textarea>
                 </div>
                 <button type="submit" id="btn-guardar" style="padding: 10px 15px; cursor: pointer;">Guardar Algoritmo</button>
@@ -249,9 +242,9 @@
             <table border="1" style="width: 100%; border-collapse: collapse; text-align: left;">
                 <thead>
                     <tr style="background-color: #f2f2f2;">
+                        <th style="padding: 10px;">ID</th>
                         <th style="padding: 10px;">Nombre</th>
                         <th style="padding: 10px;">Tipo</th>
-                        <th style="padding: 10px;">Complejidad</th>
                         <th style="padding: 10px;">Descripción</th>
                         <th style="padding: 10px;">Acciones</th>
                     </tr>
@@ -261,7 +254,6 @@
                 </tbody>
             </table>
         </section>
-
         <section id="video">
             <h2>Video explicativo sobre la IA</h2>
 
