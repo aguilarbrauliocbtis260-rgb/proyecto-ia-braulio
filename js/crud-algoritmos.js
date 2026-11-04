@@ -10,15 +10,15 @@ import {
     deleteDoc 
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// Configuración de Firebase (Sustituye con tus credenciales reales)
+// Configuración de Firebase obtenida de tu consola[cite: 1]
 const firebaseConfig = {
-  apiKey: "AIzaSyAbhxzDGgTh_hROC8hKulaZZnSJADa_8ac",
-  authDomain: "bbraulioaguilar.firebaseapp.com",
-  projectId: "bbraulioaguilar",
-  storageBucket: "bbraulioaguilar.firebasestorage.app",
-  messagingSenderId: "344040378046",
-  appId: "1:344040378046:web:6d6b645fd01c8248f558ef",
-  measurementId: "G-JZ3WTX0CL5"
+    apiKey: "AIzaSyAbhzDGgTh_hROC8hKulaZZNsJADa_8ac",
+    authDomain: "bbraulioaguilar.firebaseapp.com",
+    projectId: "bbraulioaguilar",
+    storageBucket: "bbraulioaguilar.firebasestorage.app",
+    messagingSenderId: "344040378046",
+    appId: "1:344040378046:web:6d6b645fd01c8248f558ef",
+    measurementId: "G-JZ3WTX0CL5"
 };
 
 // Inicializar Firebase y Firestore
@@ -36,7 +36,7 @@ const inputDescripcion = document.getElementById("descripcion");
 const btnGuardar = document.getElementById("btn-guardar");
 const btnCancelar = document.getElementById("btn-cancelar");
 
-// Los 22 registros iniciales solicitados
+// Los 22 registros iniciales
 const registrosIniciales = [
     { id: 1, nombre: "Búsqueda lineal", descripcion: "Revisa los elementos uno por uno hasta encontrar el dato buscado.", tipo: "Secuencial" },
     { id: 2, nombre: "Búsqueda binaria", descripcion: "Divide una lista ordenada en mitades para localizar un elemento.", tipo: "Divide y vencerás" },
@@ -76,7 +76,6 @@ async function inicializarDatos() {
 // Lectura en tiempo real (READ)
 onSnapshot(coleccionAlgoritmos, (snapshot) => {
     tabla.innerHTML = "";
-    // Opcional: ordenar los documentos por su ID original si lo deseas
     let docsArray = snapshot.docs.map(docSnap => ({ idDoc: docSnap.id, ...docSnap.data() }));
     docsArray.sort((a, b) => (a.id || 0) - (b.id || 0));
 
@@ -88,7 +87,7 @@ onSnapshot(coleccionAlgoritmos, (snapshot) => {
             <td style="padding: 8px;">${data.tipo}</td>
             <td style="padding: 8px;">${data.descripcion}</td>
             <td style="padding: 8px;">
-                <button class="btn-editar" data-id="${data.idDoc}" data-nombre="${data.nombre}" data-tipo="${data.tipo}" data-desc="${data.descripcion}" data-originalid="${data.id || ''}">Editar</button>
+                <button class="btn-editar" data-id="${data.idDoc}" data-nombre="${data.nombre}" data-tipo="${data.tipo}" data-desc="${data.descripcion}">Editar</button>
                 <button class="btn-eliminar" data-id="${data.idDoc}">Eliminar</button>
             </td>
         `;
@@ -129,11 +128,9 @@ form.addEventListener("submit", async (e) => {
     };
 
     if (idDoc === "") {
-        // Crear nuevo registro (generando un ID numérico secuencial simple o dejando que Firestore asigne)
-        datosAlgoritmo.id = Date.now().toString().slice(-3); // ID temporal numérico aleatorio
+        datosAlgoritmo.id = Date.now().toString().slice(-3);
         await addDoc(coleccionAlgoritmos, datosAlgoritmo);
     } else {
-        // Actualizar registro existente
         await updateDoc(doc(db, "algoritmos", idDoc), datosAlgoritmo);
     }
 
