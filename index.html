@@ -34,6 +34,7 @@
         <a href="#usos">Aplicaciones</a>
         <a href="#impacto">Impacto y Desafíos</a>
         <a href="#algoritmos">Algoritmos de Búsqueda</a>
+        <a href="#buscador-alumnos">Buscar alumnos</a>
         <a href="#video">Video</a>
     </nav>
 
@@ -212,7 +213,6 @@
             </ul>
         </section>
 
-        <!-- Nueva Sección: Algoritmos de Búsqueda y CRUD -->
         <!-- Sección de Algoritmos de Búsqueda y CRUD -->
         <section id="algoritmos">
             <h2>Algoritmos de Búsqueda</h2>
@@ -255,6 +255,64 @@
             </table>
         </section>
 
+        <section id="buscador-alumnos">
+            <h2>Buscador de alumnos</h2>
+
+            <p>
+                Este ejemplo demuestra cómo funciona el algoritmo de
+                búsqueda secuencial al localizar alumnos mediante su
+                ID o nombre.
+            </p>
+
+            <div class="buscador-alumnos">
+                <h3>Consultar alumno</h3>
+
+                <label for="criterio-busqueda">Buscar por:</label>
+                <select id="criterio-busqueda">
+                    <option value="id">ID del alumno</option>
+                    <option value="nombre">Nombre del alumno</option>
+                </select>
+
+                <label for="dato-busqueda">Dato que deseas encontrar:</label>
+                <input
+                    type="text"
+                    id="dato-busqueda"
+                    placeholder="Ejemplo: 1003 o Carlos"
+                >
+
+                <button type="button" onclick="buscarAlumno()">
+                    Buscar alumno
+                </button>
+
+                <div id="resultado-alumno" aria-live="polite">
+                    Escribe un ID o nombre para comenzar.
+                </div>
+
+                <h3>Proceso del algoritmo</h3>
+                <p id="comparaciones-alumno">
+                    Comparaciones realizadas: 0
+                </p>
+
+                <ol id="pasos-algoritmo"></ol>
+            </div>
+
+            <h3>Lista de alumnos registrados</h3>
+
+            <div class="tabla-alumnos">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Grupo</th>
+                            <th>Especialidad</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-alumnos"></tbody>
+                </table>
+            </div>
+        </section>
+
         <section id="video">
             <h2>Video explicativo sobre la IA</h2>
 
@@ -268,7 +326,6 @@
                 referrerpolicy="strict-origin-when-cross-origin" 
                 allowfullscreen>
             </iframe>
-
         </section>
 
     </main>
@@ -297,7 +354,7 @@
     </script>
 
     <script src="js/carrusel.js"></script>
-    
+
     <!-- Script del CRUD con Firebase (Firestore) -->
     <script type="module" src="js/crud-algoritmos.js"></script>
 
