@@ -425,3 +425,69 @@ footer p {
         height: 38px;
     }
 }
+
+
+
+.buscador-alumnos {
+    background: #1f2937;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 20px 0;
+    color: white;
+}
+
+.buscador-alumnos h3 {
+    color: #f4c430;
+}
+
+.buscador-alumnos label {
+    display: block;
+    margin-top: 15px;
+}
+
+.buscador-alumnos input,
+.buscador-alumnos select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    box-sizing: border-box;
+    background: #111827;
+    color: white;
+    border: 1px solid #4b5563;
+    border-radius: 6px;
+}
+
+.buscador-alumnos button {
+    margin-top: 18px;
+    padding: 12px 20px;
+    background: #f4c430;
+    color: #111827;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#resultado-alumno {
+    margin-top: 20px;
+    padding: 15px;
+    background: #111827;
+    border-left: 4px solid #f4c430;
+    border-radius: 6px;
+    line-height: 1.6;
+}
+
+#pasos-algoritmo {
+    line-height: 2;
+}
+
+.tabla-alumnos {
+    overflow-x: auto;
+}
+
+#lista-alumnos tr.alumno-encontrado {
+    background: #166534;
+    color: white;
+    font-weight: bold;
+}
+
